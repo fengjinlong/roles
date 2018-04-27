@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import login from '@/components/login'
-import user from '@/components/user'
 
 const _import = require('./_import_' + process.env.NODE_ENV)
 
