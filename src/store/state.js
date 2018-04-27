@@ -1,7 +1,7 @@
 const state = {
   user: {
     roles: [],
-    token: '1'
+    token: ''
   },
   addRouters: []
 }

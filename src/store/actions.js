@@ -30,10 +30,9 @@ export const addRoutes = function ({commit}, roles) {
       // 拥有所有权限
       addRouters = asyncRouterMap
     } else {
-      // 拥有部分权限，并进行筛选
+      // 拥有部分权限，并进行筛选filterAsyncRouter(array, string)
       addRouters = filterAsyncRouter(asyncRouterMap, roles)
     }
-    // console.log(addRouters)
     commit(types.SET_ROUTERS, addRouters)
     resolve()
   })

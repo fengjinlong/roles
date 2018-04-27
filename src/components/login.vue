@@ -23,10 +23,10 @@ export default {
       })
     },
     fun (token) {
-      sessionStorage.token = token
       this.setToken(token)
-      axios.get('/api/getrole?token=' + token).then((res) => {
-        // console.log(res.data)
+      console.log('aaaaaaa: ' + sessionStorage.token)
+      axios.get('/api/getrole?token=' + sessionStorage.token).then((res) => {
+        sessionStorage.token = token
       })
     },
     ...mapMutations({

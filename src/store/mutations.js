@@ -5,7 +5,6 @@ const mutations = {
     state.addRouters = roles
   },
   [types.SET_TOKEN] (state, token) {
-    console.log(token)
     state.user.token = token
   },
   [types.SET_ROLES] (state, routers) {

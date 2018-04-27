@@ -7,12 +7,8 @@ const _import = require('./_import_' + process.env.NODE_ENV)
 
 Vue.use(Router)
 export const constantRouterMap = [
-  { path: '/login', component: login },
   { path: '/', component: login },
-  {
-    path: '/err',
-    component: user
-  }
+  { path: '/home', component: _import('home') }
 ]
 
 export default new Router({
@@ -35,5 +31,5 @@ export const asyncRouterMap = [
     path: '/powerC',
     component: _import('powerc')
   },
-  { path: '*', redirect: '/err', hidden: true }
+  { path: '*', component: _import('user'), hidden: true }
 ]
