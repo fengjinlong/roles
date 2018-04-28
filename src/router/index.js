@@ -18,11 +18,12 @@ export const asyncRouterMap = [
   {
     path: '/powerA',
     component: _import('powera'),
-    name: '权限测试',
+    name: 'admin',
     meta: { role: ['admin'] }
   },
   {
     path: '/powerB',
+    name: 'admin superb',
     component: _import('powerb'),
     meta: { role: ['admin', 'superb'], title: 'powerB' }
   },

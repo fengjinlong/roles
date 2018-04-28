@@ -37,9 +37,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         if (req.query.token === '1') {
           res.json('admin')  
         }else if (req.query.token === '2') {
-          res.json('权限2')  
+          res.json('superb')  
         } else {
-          res.json('权限0')
+          res.json('没有权限')
         }
       })
     },
