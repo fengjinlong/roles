@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <!-- <div>login</div> -->
     <input type="text" placeholder="a or b" v-model="name">
     <button @click="submit">btn</button>
   </div>

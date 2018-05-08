@@ -1,7 +1,7 @@
 const state = {
   user: {
     roles: [],
-    token: ''
+    token: sessionStorage.getItem('token') || ''
   },
   addRouters: []
 }

@@ -33,15 +33,27 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         }
       }),
       app.get('/api/getrole', function (req, res) {
-        console.log(req.query.token)
         if (req.query.token === '1') {
           res.json('admin')  
         }else if (req.query.token === '2') {
           res.json('superb')  
+        }else if (req.query.token === '0') {
+          // 过期
+          res.json('过期')
+          // req.headers.timeOut = '1'  
+          res.setHeader('timeout', '1')
         } else {
           res.json('没有权限')
         }
+      }),
+      app.get('/api/test', function (req, res) {
+        console.log(req.headers)
+        res.json('test拦截')
       })
+    //   app.get('/api/test11', function (req, res) {
+    //     console.log(res.getHeader('Authorization'))
+    //     res.json('test拦截1')
+    // })
     },
     clientLogLevel: 'warning',
     historyApiFallback: {

@@ -1,11 +1,16 @@
 <template>
-  <div class="">
-    <h2>{{li}}</h2>
+  <div>
+    <div :key="item.kid" v-for="item in li">
+      <h2>{{item.path}}</h2>
+    </div>
+    <button @click="btn">测试拦截</button>
+    <button @click="btn1">测试没有拦截</button>
   </div>
 </template>
 
 <script>
 import {mapGetters} from 'vuex'
+import { test, test1 } from '@/api/login'
 export default {
   name: 'home',
   data () {
@@ -14,10 +19,21 @@ export default {
     }
   },
   methods: {
+    btn () {
+      test().then((res) => {
+        console.log(res)
+      })
+    },
+    btn1 () {
+      test1().then((res) => {
+        console.log(res)
+      })
+    }
   },
-  mounted () {
-    console.log(6)
-    this.li = this.addRouters
+  created () {
+    setTimeout(() => {
+      this.li = this.addRouters
+    }, 100)
   },
   computed: {
     ...mapGetters([
